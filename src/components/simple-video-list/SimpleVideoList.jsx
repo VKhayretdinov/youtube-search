@@ -10,17 +10,12 @@ import SimpleVideoListItem from './SimpleVideoListItem'
 function SimpleVideoList({classes, titles}) {
   // const [titles, setTitles] = useState();
 
-  useEffect( () => {
-    titles = [];
-    console.log('EFFECT')
-  })
-
   return (
     // https://material-ui.com/demos/lists/#simple-list
     <Paper>
       <List component="nav" className={classes.simpleVideoList}> 
         {titles.map((item) => (
-          <SimpleVideoListItem key={item.key} title={item.title}/>
+          <SimpleVideoListItem key={item.id} title={item.title}/>
         ))}
       </List>
     </Paper>

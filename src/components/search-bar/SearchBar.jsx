@@ -17,21 +17,21 @@ function SearchBar({classes}) {
   const [titles, setTitles] = useState([]);
 
   // // While blocking exists LINKS!!
-  const testTitles = [
-    {
-      key: '123',
-      title: 'First title &quotthis are quots&quot',
-    },
-    {
-      key: '124',
-      title: 'Second title &quotthis are quots&quot'
-    },
-    {
-      key: '125',
-      title: 'Third title &quotthis are quots&quot'
-    },
+  // const testTitles = [
+  //   {
+  //     key: '123',
+  //     title: 'First title &quotthis are quots&quot',
+  //   },
+  //   {
+  //     key: '124',
+  //     title: 'Second title &quotthis are quots&quot'
+  //   },
+  //   {
+  //     key: '125',
+  //     title: 'Third title &quotthis are quots&quot'
+  //   },
   
-  ]
+  // ]
 
   function search(value) {
     const API_KEY = 'AIzaSyDCNNGM7wMeAoVyUQJ962Q-R2fa71v4ilg';
@@ -64,16 +64,16 @@ function SearchBar({classes}) {
 
   const handleChange = (value) => {
     setInputText(value);
-    setTitles(testTitles); // While blocking exists LINKS!!
-    // search(value);
-    console.log('change')
+    // setTitles(testTitles); // While blocking exists LINKS!!
+    search(value);
+    // console.log('change')
   }
 
-  // const handleBlurInput = () => {
-  //   const list = ReactDom.findDOMNode(SimpleVideoList);
-  //   setTitles([]);
-  //   console.log(list)
-  // }
+  const handleBlurInput = () => {
+    // const list = ReactDom.findDOMNode(SimpleVideoList);
+    setTitles([]);
+    // console.log(list)
+  }
 
   return (
     <Paper>
@@ -87,7 +87,7 @@ function SearchBar({classes}) {
             autoFocus
             value={inputText}
             onChange={(event => handleChange(event.target.value))}
-            // onBlur={handleBlurInput}
+            onBlur={handleBlurInput}
           />
         </Grid>
         <Grid item xs={1}>

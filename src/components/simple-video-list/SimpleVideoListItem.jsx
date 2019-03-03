@@ -16,13 +16,13 @@ function SimpleVideoListItem({classes, id, title}) {
    */
   const readble = (str) => ({__html: str});
 
-  const handleClick = () => {
-    console.log('clickItem')
-  }
+  // const handleClick = () => {
+  //   console.log('clickItem')
+  // }
 
   return (
     <ListItem button key={id} divider>
-      <Link to="/list" className={classes.item} onClick={handleClick}>
+      <Link to="/list" className={classes.item}>
         <ListItemText><div dangerouslySetInnerHTML={readble(title)} /></ListItemText>
       </Link>
     </ListItem>
