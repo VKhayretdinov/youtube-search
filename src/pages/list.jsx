@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import MediaQuery from 'react-responsive';
 import { withStyles } from '@material-ui/core/styles'
 
-import SearchBar from '../search-bar/SearchBar';
+import SearchBar from '../components/SearchBar/SearchBar';
 
 function List({classes}) {
   return (

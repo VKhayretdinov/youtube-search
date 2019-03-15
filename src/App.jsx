@@ -3,8 +3,8 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Index from '../index/Index'
-import ListRouter from '../list-router/ListRouter'
+import index from './pages/index'
+import list from './pages/list'
 
 import './App.css';
 
@@ -18,8 +18,8 @@ function App() {
         <CssBaseline />
         <Router>
           <Switch>
-            <Route exact path="/" component={Index} />
-            <Route path="/list" component={ListRouter} />
+            <Route exact path="/" component={index} />
+            <Route path="/list" component={list} />
           </Switch>
         </Router>
       </Fragment>

@@ -5,7 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom'
 
-function SimpleVideoListItem({classes, id, title}) {
+const SimpleVideoListItem = ({classes, key, title}) => {
   
   // TODO: Better solution must be found (without dangerouslySetInnerHTML)
   /**
@@ -20,18 +20,20 @@ function SimpleVideoListItem({classes, id, title}) {
   //   console.log('clickItem')
   // }
 
+
   return (
-    <ListItem button key={id} divider>
-      <Link to="/list" className={classes.item}>
+    <Link to="/list" className={classes.item}>
+      <ListItem button key={key} divider>
         <ListItemText><div dangerouslySetInnerHTML={readble(title)} /></ListItemText>
-      </Link>
-    </ListItem>
+      </ListItem>
+    </Link>
   )
 }
 
 SimpleVideoListItem.propTypes = {
   classes: PropTypes.objectOf(PropTypes.shape).isRequired,
-  title: PropTypes.string.isRequired,
+  key: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 SimpleVideoListItem.defaultProps = {
